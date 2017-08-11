@@ -1,0 +1,40 @@
+<% def computerCode
+  # red = 1, green = 2, blue = 3, black = 4, white = 5, brown = 6
+@code = Array.new(4) {rand(1..6)}
+
+@colorCode = @code.map { |x|
+  if x == 1
+  "red"
+elsif x == 2
+  "green"
+elsif x == 3
+  "blue"
+elsif x == 4
+  "black"
+elsif x == 5
+  "white"
+elsif x == 6
+  "brown"
+#else x
+  end
+}
+
+end %>
+
+<% computerCode %>
+
+<form action="answer" method ="test">
+  First Color:<br>
+  <input type="text" name="color1">
+  <br>
+  Second Color:<br>
+  <input type="text" name="color2">
+  <br>
+  Third Color:<br>
+  <input type="text" name="color3">
+  <br>
+  Fourth Color:<br>
+  <input type="text" name="color4">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
