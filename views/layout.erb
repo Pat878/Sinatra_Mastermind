@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Pat Mellon | Mastermind</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  </head>
+  <body class='container'>
+    <h1><%= @title %></h1>
+    <p> Welcome to Mastermind! You have 12 chances to guess my color code.</p>
+    <p> There are 6 colors you can guess from: red, green, blue, black, white, and brown. Guess below!</p>
+    <%= yield %>
+  </body>
+</html>
