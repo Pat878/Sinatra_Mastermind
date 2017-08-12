@@ -6,9 +6,15 @@
     <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
   </head>
   <body class='container'>
+    <div class="well">
+      <center>
     <h1>Welcome to Mastermind!</h1>
     <p>Can you guess my color code?</p>
-    <p> There are 6 colors you can guess from: red, green, blue, black, white, and brown. Guess below!</p>
+    <p> There are 6 colors you can choose: <font color="red">red</font>, <font color="green">green</font>,
+      <font color="blue">blue</font>, <font color="black">black</font>,
+      <span style="background-color: #000000"><font color="white">white</font></span>,
+      and <font color="brown">brown</font>. Guess below!</p>
     <%= yield %>
+  </div>
   </body>
 </html>
