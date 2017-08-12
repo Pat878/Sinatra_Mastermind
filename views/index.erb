@@ -1,40 +1,25 @@
-<% def computerCode
-  # red = 1, green = 2, blue = 3, black = 4, white = 5, brown = 6
-@code = Array.new(4) {rand(1..6)}
+<p>You cast: <%= @colorCode %></p>
 
-@colorCode = @code.map { |x|
-  if x == 1
-  "red"
-elsif x == 2
-  "green"
-elsif x == 3
-  "blue"
-elsif x == 4
-  "black"
-elsif x == 5
-  "white"
-elsif x == 6
-  "brown"
-#else x
-  end
-}
-
+<% def playerGuess
+  puts "\nPlease give me the first color."
+  @guessCode = [color1, color2, color3, color4]
+  compareCodes
 end %>
 
-<% computerCode %>
-
-<form action="answer" method ="test">
+<form action="/compareCodes" method ="post">
   First Color:<br>
-  <input type="text" name="color1">
+  <input type="text" name="color[]">
   <br>
   Second Color:<br>
-  <input type="text" name="color2">
+  <input type="text" name="color[]">
   <br>
   Third Color:<br>
-  <input type="text" name="color3">
+  <input type="text" name="color[]">
   <br>
   Fourth Color:<br>
-  <input type="text" name="color4">
+  <input type="text" name="color[]">
   <br><br>
-  <input type="submit" value="Submit">
+  <input type="submit">
 </form>
+
+<%  @color = params[:color] %>
