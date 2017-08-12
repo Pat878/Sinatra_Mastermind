@@ -51,6 +51,7 @@ post '/compareCodes' do
   if session[:code] == @guess
     redirect '/winner'
   end
+  compareCodes
   erb :checkanswers
 
 end
@@ -62,12 +63,6 @@ end
 get '/winner' do
   erb :winner
 end
-
-def playerGuess
-  puts "\nPlease give me the first color."
-  @guessCode = [color1, color2, color3, color4]
-  compareCodes
-  end
 
   def turn
 
@@ -85,7 +80,22 @@ def playerGuess
 
   end
 
+  def compareCodes
 
+  @results = session[:code].zip(@guess).map { |x, y|
+    if x == y
+  "Direct match!"
+  else
+    "-"
+  end
+
+  }
+
+  @hint = (session[:code] & @guess).shuffle
+  print "\nHere's your guess: #{@guess}\nHere are how many matches you guessed correctly: #{@results}\nThese colors are definitely somewhere in my code: #{@hint}\n"
+  turn
+
+  end
 
 
 =begin
