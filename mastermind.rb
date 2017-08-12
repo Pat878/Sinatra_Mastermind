@@ -37,7 +37,7 @@ end
 
 get '/guessAgain' do
   puts session[:code]
-  erb :guessagain
+  erb :index
 
 end
 
@@ -48,7 +48,9 @@ post '/compareCodes' do
   array = params.to_a
   @guess = array[0][1]
   puts @guess
-
+  if session[:code] == @guess
+    redirect '/winner'
+  end
   erb :checkanswers
 
 end
@@ -57,6 +59,9 @@ post '/compareCodes' do
   erb :loser
 end
 
+get '/winner' do
+  erb :winner
+end
 
 def playerGuess
   puts "\nPlease give me the first color."
