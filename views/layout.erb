@@ -8,13 +8,20 @@
   <body class='container'>
     <div class="well">
       <center>
-    <h1>Welcome to Mastermind!</h1>
+    <div class="hero-unit"><h1 class="text-center">Welcome to Mastermind!</h1></div>
     <p>Can you guess my color code?</p>
     <p> There are 6 colors you can choose: <font color="red">red</font>, <font color="green">green</font>,
       <font color="blue">blue</font>, <font color="black">black</font>,
       <span style="background-color: #000000"><font color="white">white</font></span>,
-      and <font color="brown">brown</font>. Guess below!</p>
+      and <font color="brown">brown</font>.</p>
+      <p>Each color can be used more than once. Guess below!</p>
+      <ul class="nav nav-list">
+        <li class="divider"></li>
+      </ul>
     <%= yield %>
+    <p><a href="https://github.com/Pat878" target="_blank"><img src ="http://patmellon.com/wp-content/uploads/2017/01/github-2.png"
+      class="img-responsive img-rounded" height="25" width="25"></a></p>
+  </center>
   </div>
   </body>
 </html>
