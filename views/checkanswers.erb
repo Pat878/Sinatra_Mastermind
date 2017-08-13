@@ -1,8 +1,7 @@
-<div class="well"><p>Here's your guess: <%= @guess.join(',') %></p>
+<p>Here's your guess: <%= @guess.join(',') %></p>
 <p>Here are how many matches you guessed correctly: <%= @results %></p>
 <p>These colors are definitely somewhere in my code: <%= @hint %></p>
-</div>
 
-<div class="alert alert-danger" role="alert"><p>Remaining guesses: <%= 12 - session[:turn] %></p></div>
+<div class="alert alert-danger" role="alert"><p>Remaining guesses: <%= 6 - session[:turn] %></p></div>
 
-<a href="/guessAgain" class="btn btn-primary">Guess Again?</a>
+<p><a href="/guessAgain" class="btn btn-primary">Guess Again?</a></p>
